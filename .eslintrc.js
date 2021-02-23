@@ -1,32 +1,17 @@
 module.exports = {
-  parserOptions: {
-    ecmaVersion: 2018,
-  },
   env: {
     commonjs: true,
     es6: true,
-    node: true,
     jest: true,
+    node: true,
   },
   extends: ['eslint:recommended', 'airbnb-base'],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
+  parserOptions: {
+    ecmaVersion: 2018,
   },
   rules: {
-    indent: ['error', 2],
-    'linebreak-style': ['error', 'unix'],
-    quotes: ['error', 'single'],
-    semi: ['error', 'always', { omitLastInOneLineBlock: true }],
-    eqeqeq: 'error',
-    'no-trailing-spaces': 'error',
-    'object-curly-spacing': ['error', 'always'],
     'arrow-parens': ['error', 'as-needed'],
     'arrow-spacing': ['error', { before: true, after: true }],
-    'eol-last': ['error', 'always'],
-    'no-console': 0,
-    'no-underscore-dangle': ['error', { allow: ['_id', '__v'] }],
-    'no-param-reassign': ['error', { props: false }],
     'comma-dangle': [
       'error',
       {
@@ -37,5 +22,16 @@ module.exports = {
         functions: 'never',
       },
     ],
+    'eol-last': ['error', 'always'],
+    eqeqeq: 'error',
+    indent: ['error', 2],
+    'linebreak-style': ['error', 'unix'],
+    'no-console': 0,
+    'no-param-reassign': ['error', { props: false }],
+    'no-trailing-spaces': 'error',
+    'no-underscore-dangle': ['error', { allow: ['_id', '__v'] }],
+    'object-curly-spacing': ['error', 'always'],
+    quotes: ['error', 'single'],
+    semi: ['error', 'always', { omitLastInOneLineBlock: true }],
   },
 };

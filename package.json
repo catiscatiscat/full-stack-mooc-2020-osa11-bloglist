@@ -1,11 +1,11 @@
 {
-  "name": "full-stack-mooc-2020-osa4-be",
+  "name": "full-stack-mooc-2020-osa11-bloglist",
   "version": "0.0.1",
-  "description": "osa4 backend",
-  "main": "index.js",
+  "description": "osa11 bloglist BE FE",
+  "main": "server/index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=prduction node index.js",
-    "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "start": "cross-env NODE_ENV=prduction node server/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js",
     "lint": "eslint .",
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand"
   },
