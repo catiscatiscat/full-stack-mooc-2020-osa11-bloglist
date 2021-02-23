@@ -1,14 +1,21 @@
 module.exports = {
   env: {
+    browser: true,
     commonjs: true,
     es6: true,
     jest: true,
     node: true,
+    'cypress/globals': true,
   },
-  extends: ['eslint:recommended'],
+  extends: ['eslint:recommended', 'plugin:react/recommended'],
   parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
     ecmaVersion: 2018,
+    sourceType: 'module',
   },
+  plugins: ['react', 'jest', 'cypress'],
   rules: {
     'arrow-parens': ['error', 'as-needed'],
     'arrow-spacing': ['error', { before: true, after: true }],
@@ -32,6 +39,12 @@ module.exports = {
     'no-underscore-dangle': ['error', { allow: ['_id', '__v'] }],
     'object-curly-spacing': ['error', 'always'],
     quotes: ['error', 'single'],
+    'react/prop-types': 0,
     semi: ['error', 'always', { omitLastInOneLineBlock: true }],
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
 };
