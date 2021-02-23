@@ -1,0 +1,44 @@
+.user {
+  display: flex;
+}
+
+.userText {
+  margin: 20px 5px 0px 0px;
+}
+
+.logoutBtn {
+  margin: 20px 0px 0px 0px;
+}
+
+.blog {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 2px;
+  border: solid;
+  border-width: 1px;
+  margin-bottom: 5px;
+}
+
+.blogForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  margin: 30px 0px;
+}
+
+button {
+  padding: 0px, 1px;
+}
+
+.createBtn {
+  width: 54px;
+}
+
+.likeBtn {
+  color: blue;
+}
+.removeBtn {
+  color: red;
+}
