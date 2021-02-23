@@ -5,7 +5,7 @@ module.exports = {
     jest: true,
     node: true,
   },
-  extends: ['eslint:recommended', 'airbnb-base'],
+  extends: ['eslint:recommended'],
   parserOptions: {
     ecmaVersion: 2018,
   },
@@ -26,7 +26,7 @@ module.exports = {
     eqeqeq: 'error',
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
-    'no-console': 0,
+    'no-console': 'error',
     'no-param-reassign': ['error', { props: false }],
     'no-trailing-spaces': 'error',
     'no-underscore-dangle': ['error', { allow: ['_id', '__v'] }],
