@@ -1,0 +1,10 @@
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjIyMiIsImlkIjoiNWY4MzEyNGZiOTQ1Mjk0NGMwMWRkZTg2IiwiaWF0IjoxNjAyNDQ1Njg5fQ.ByiWs2QLT8Fz5At9mNPI_oy8oLToN8xNOb5RtPlZ9E8
+
+{
+  "title": "Can add blog with token 2",
+  "author": "Token holder",
+  "url": "http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html",
+  "likes": 4
+}
