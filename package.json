@@ -6,6 +6,8 @@
   "scripts": {
     "start": "cross-env NODE_ENV=prduction node server/index.js",
     "dev": "cross-env NODE_ENV=development nodemon server/index.js",
+    "client": "npm run start --prefix client",
+    "build": "npm run build --prefix client",
     "lint": "eslint .",
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand"
   },
@@ -25,20 +27,49 @@
     "morgan": "^1.10.0",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "react-dom": "^16.14.0",
+    "react-scripts": "3.4.1"
   },
   "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.12.17",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^11.2.5",
     "cross-env": "^7.0.2",
-    "eslint": "^7.2.0",
     "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-jest": "^24.1.5",
     "eslint-plugin-react": "^7.22.0",
-    "jest": "^26.4.2",
     "nodemon": "^2.0.4",
     "supertest": "^5.0.0"
   },
   "jest": {
-    "testEnvironment": "node"
+    "projects": [
+      {
+        "displayName": "backend",
+        "testEnvironment": "node",
+        "testMatch": [
+          "<rootDir>/server/tests//*.test.js"
+        ]
+      },
+      {
+        "displayName": "frontend",
+        "testEnvironment": "jsdom",
+        "testMatch": [
+          "<rootDir>/client/src/**/*.test.js"
+        ]
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
