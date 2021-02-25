@@ -36,4 +36,4 @@ jobs:
           start: |
             npm run start:test
             npm run client
-          wait-on: http://localhost:5000
+          wait-on: http://localhost:3000, http://localhost:3001
