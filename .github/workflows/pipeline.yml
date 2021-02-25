@@ -58,7 +58,7 @@ jobs:
           heroku_app_name: "mooc-bloglist"
           heroku_email: "iko.hyppanen@gmail.com"
           remote_branch: main
-          healthcheck: "https://mooc-bloglist.herokuapp.com/health"
+          healthcheck: "https://mooc-bloglist.herokuapp.com/api/health"
           checkstring: "ok"
           delay: 5
           rollbackonhealthcheckfailed: true0
