@@ -7,7 +7,7 @@ describe('Blog app', function () {
       password: 'erittainsalainen',
     };
     cy.request('POST', 'http://localhost:3001/api/users/', user);
-    cy.visit('http://localhost:3000');
+    cy.visit('http://localhost:3001');
   });
 
   it('Login from is shown', function () {
