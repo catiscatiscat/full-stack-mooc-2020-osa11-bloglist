@@ -5,7 +5,7 @@ on:
     branches:
       - main
   pull_request:
-    branches: [master]
+    branches: [main]
     types: [opened, synchronize]
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -86,8 +86,8 @@ jobs:
         env:
           DEFAULT_BUMP: patch
           WITH_V: true
-          INITIAL_VERSION: 0.0.2
-          PRERELEASE_SUFFIX: 
+          INITIAL_VERSION: 0.1.0
+          PRERELEASE_SUFFIX: 'tag'
           DRY_RUN: false
         if: env.EVENT_NAME == 'push' && env.SKIP == 'false'
         uses: anothrNick/github-tag-action@eca2b69f9e2c24be7decccd0f15fdb1ea5906598
