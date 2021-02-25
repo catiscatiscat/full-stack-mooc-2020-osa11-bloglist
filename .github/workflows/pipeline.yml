@@ -74,7 +74,7 @@ jobs:
             {
               attachments: [{
                 color: 'good',
-                text: `a new version deployed to https://moocpoke.herokuapp.com/ (${process.env.AS_COMMIT})\nby ${process.env.AS_AUTHOR} build took ${process.env.AS_TOOK}`
+                text: `a new version deployed to https://mooc-bloglist.herokuapp.com/ (${process.env.AS_COMMIT})\nby ${process.env.AS_AUTHOR} build took ${process.env.AS_TOOK}`
               }]
             }
   
