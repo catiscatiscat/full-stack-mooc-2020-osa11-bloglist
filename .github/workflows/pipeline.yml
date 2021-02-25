@@ -35,5 +35,5 @@ jobs:
           command: npm run test:e2e
           start: |
             npm run start:test
-            nmp run client
+            npm run client
           wait-on: http://localhost:5000
