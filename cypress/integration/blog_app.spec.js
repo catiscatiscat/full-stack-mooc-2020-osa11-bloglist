@@ -174,6 +174,7 @@ describe('Blog app', function () {
 
         // blogs order has updated
         cy.get('#blogs').children().as('updatedBlogs');
+        cy.get('@blogs').should('have.length', 3);
         cy.get('@updatedBlogs').find('#blog-basic-info').eq(0).contains('first blog');
       });
     });
