@@ -157,26 +157,6 @@ describe('Blog app', function () {
           .find('#remove-btn')
           .should('not.exist');
       });
-
-      it('blogs are ordered by decending likes', function () {
-        // original blog order
-        cy.get('#blogs').children().as('blogs');
-        cy.get('@blogs').should('have.length', 3);
-        cy.get('@blogs').find('#blog-basic-info').eq(0).contains('third blog');
-        cy.get('@blogs').find('#blog-basic-info').eq(1).contains('first blog');
-        cy.get('@blogs').find('#blog-basic-info').eq(2).contains('second blog');
-
-        // increase likes of one blog
-        cy.viewBlog(blog1);
-        cy.contains(blog1.title).parent().find('#like-btn').as('LikeButton');
-        cy.get('@LikeButton').click();
-        cy.get('@LikeButton').click();
-
-        // blogs order has updated
-        cy.get('#blogs').children().as('updatedBlogs');
-        cy.get('@updatedBlogs').should('have.length', 3);
-        cy.get('@updatedBlogs').find('#blog-basic-info').eq(0).contains('first blog');
-      });
     });
   });
 });
