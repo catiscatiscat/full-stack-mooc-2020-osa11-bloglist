@@ -1,4 +1,4 @@
-name: Lint Build pipeline
+name: Build-Deploy-Tag pipeline
 
 on:
   push:
