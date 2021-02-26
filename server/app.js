@@ -40,7 +40,7 @@ app.get('/api/health', (req, res) => {
   res.send('ok');
 });
 app.get('/api/version', (req, res) => {
-  res.send('11'); // change this string to ensure a new version deployed
+  res.send('13'); // change this string to ensure a new version deployed
 });
 
 app.use('/api/blogs', blogsRouter);
