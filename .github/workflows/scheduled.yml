@@ -2,8 +2,9 @@ name: Scheduled health check
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
-
+    # scheduled check for once a year
+    - cron: "0 0 1 1 *"
+    # - cron: '*/30 * * * *' every 30 minutes
 jobs:
   shceduled_check_job:
     runs-on: ubuntu-18.04
