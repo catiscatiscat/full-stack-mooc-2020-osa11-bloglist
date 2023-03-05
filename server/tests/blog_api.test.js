@@ -88,7 +88,11 @@ describe('when there is initially some blogs saved', () => {
       const blogsAtEnd = await blogsInDb();
       const contents = blogsAtEnd.map(blog => _.omit(blog, 'id'));
       const userId = await getUserId();
-      const blogWithZeroLikes = { ...blogWithoutLikes, likes: 0, user: userId.toString() };
+      const blogWithZeroLikes = {
+        ...blogWithoutLikes,
+        likes: 0,
+        user: userId.toString(),
+      };
 
       expect(blogsAtEnd).toHaveLength(initialBlogs.length + 1);
       expect(contents).toContainEqual(blogWithZeroLikes);
@@ -96,19 +100,18 @@ describe('when there is initially some blogs saved', () => {
 
     test('fails with a status code 400 if title or url is not given', async () => {
       const token = await loginUser();
-      const promiseArray = invalidBlogs.map(invalid => api
-        .post('/api/blogs')
-        .set('Authorization', `bearer ${token}`)
-        .send(invalid)
-        .expect(400));
+      const promiseArray = invalidBlogs.map(invalid =>
+        api
+          .post('/api/blogs')
+          .set('Authorization', `bearer ${token}`)
+          .send(invalid)
+          .expect(400)
+      );
       await Promise.all(promiseArray);
     });
 
     test('fails with a status code 401 if token is not included', async () => {
-      const contents = await api
-        .post('/api/blogs')
-        .send(newBlog)
-        .expect(401);
+      const contents = await api.post('/api/blogs').send(newBlog).expect(401);
 
       expect([contents.body]).toContainEqual(invalidTokenError);
     });
@@ -182,7 +185,7 @@ describe('when there is initially some blogs saved', () => {
       const updateValue = { likes: 101 };
 
       await api
-        .put((`/api/blogs/${blogToUpdate.id}`))
+        .put(`/api/blogs/${blogToUpdate.id}`)
         .send(updateValue)
         .expect(200)
         .expect('Content-Type', /application\/json/);
@@ -200,7 +203,7 @@ describe('when there is initially some blogs saved', () => {
       const updateValue = { likes: 'asd' };
 
       await api
-        .put((`/api/blogs/${blogToUpdate.id}`))
+        .put(`/api/blogs/${blogToUpdate.id}`)
         .send(updateValue)
         .expect(400)
         .expect('Content-Type', /application\/json/);
@@ -219,7 +222,7 @@ describe('when there is initially some blogs saved', () => {
       await Blog.deleteMany({});
 
       await api
-        .put((`/api/blogs/${blogToFailUpdate.id}`))
+        .put(`/api/blogs/${blogToFailUpdate.id}`)
         .send(updateValue)
         .expect(404);
     });
